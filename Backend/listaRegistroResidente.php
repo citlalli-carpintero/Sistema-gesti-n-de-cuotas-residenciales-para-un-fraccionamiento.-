@@ -1,6 +1,6 @@
 <?php
 include 'db.php';
-// Es buena práctica verificar la sesión de admin aquí también
+
 ?>
 
 <!DOCTYPE html>
