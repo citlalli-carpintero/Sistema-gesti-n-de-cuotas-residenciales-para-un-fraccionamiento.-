@@ -27,7 +27,7 @@ html, body {
 
 .content-wrapper {
     width: 100%;
-    max-width: 700px; /* Un poco más ancho para la doble columna */
+    max-width: 700px; 
 }
 
 .header {
@@ -49,10 +49,9 @@ h1 {
     margin: 0;
 }
 
-/* Rejilla para los campos del formulario */
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -87,7 +86,6 @@ input:focus {
     box-shadow: 0 0 0 4px rgba(67, 83, 255, 0.1);
 }
 
-/* Botón de Registro */
 .btn-registrar {
     width: 100%;
     background-color: var(--primary-blue);
@@ -105,9 +103,9 @@ input:focus {
     background-color: #3544d6;
 }
 
-/* Responsivo para móviles */
+
 @media (max-width: 600px) {
     .form-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-columns: 1fr; 
     }
 }
