@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Gestión Residencial</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        /* Estilos para la ventana emergente (Modal) */
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .modal-content h2 { color: #4353ff; margin-top: 0; }
+        .modal-content p { color: #606770; line-height: 1.5; margin-bottom: 15px; }
+        .password-hint {
+            background: #f0f2f5;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #4353ff;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .btn-cerrar {
+            background: #4353ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-fullscreen-container">
+        
+        <div class="login-content-wrapper">
+            <h1>Iniciar Sesión</h1>
+
+            <div class="user-selector">
+                <button id="btnResidente" class="selector-btn active" onclick="switchUser('residente')">Residente</button>
+                <button id="btnAdmin" class="selector-btn" onclick="switchUser('admin')">Administrador</button>
+            </div>
+
+            <form id="loginForm" action="login_proceso.php" method="POST">
+                <div class="form-group">
+                    <label id="labelUsuario">Usuario</label>
+                    <input type="text" id="usuario" name="username" placeholder="Nombre del residente" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="javascript:void(0)" onclick="mostrarModal()">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-ingresar">Ingresar</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="modalOlvido" class="modal-overlay">
+        <div class="modal-content">
+            <h2>🔑 Recuperación de contraseña</h2>
+            <p>Si es tu primera vez ingresando o no la recuerdas, intenta con la contraseña predeterminada:</p>
+            
+            <span class="password-hint" id="hintText">Tu contraseña es: 1234</span>
+
+            <p>En caso de no poder ingresar o presentar más problemas, favor de acudir a la <strong>oficina de administración</strong> para un restablecimiento manual.</p>
+            
+            <button class="btn-cerrar" onclick="cerrarModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script>
+        let currentRole = 'residente';
+
+        function switchUser(role) {
+            currentRole = role;
+            const btnResidente = document.getElementById('btnResidente');
+            const btnAdmin = document.getElementById('btnAdmin');
+            const labelUsuario = document.getElementById('labelUsuario');
+            const inputUsuario = document.getElementById('usuario');
+            const hintText = document.getElementById('hintText');
+
+            if (role === 'residente') {
+                btnResidente.classList.add('active');
+                btnAdmin.classList.remove('active');
+                labelUsuario.innerText = 'Usuario';
+                inputUsuario.placeholder = 'Nombre del residente';
+                hintText.innerText = 'Tu contraseña es: 1234';
+            } else {
+                btnAdmin.classList.add('active');
+                btnResidente.classList.remove('active');
+                labelUsuario.innerText = 'Administrador';
+                inputUsuario.placeholder = 'Nombre del administrador';
+                hintText.innerText = 'Clave de empleado proporcionada por el fraccionamiento';
+            }
+        }
+
+        function mostrarModal() {
+            document.getElementById('modalOlvido').style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modalOlvido').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalOlvido');
+            if (event.target == modal) {
+                cerrarModal();
+            }
+        }
+    </script>
+</body>
+</html>
