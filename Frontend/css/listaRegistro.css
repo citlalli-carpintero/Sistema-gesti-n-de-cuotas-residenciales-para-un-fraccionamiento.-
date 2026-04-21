@@ -1,13 +1,13 @@
 :root {
     --primary-blue: #4353ff;
-    --success-green: #2ecc71; /* Color verde del botón "Aprobar" */
+    --success-green: #2ecc71; 
     --error-red: #e74c3c;
     --text-dark: #1c1e21;
     --text-muted: #606770;
     --border-color: #eee;
     --white: #ffffff;
     --bg-light: #f8f9fa;
-    --shadow-card: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave como en la imagen */
+    --shadow-card: 0 4px 15px rgba(0,0,0,0.05); 
 }
 
 /* Configuramos html y body para ocupar todo el espacio */
@@ -15,7 +15,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--white); /* Fondo blanco total */
+    background-color: var(--white); 
     font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
@@ -23,7 +23,7 @@ body {
     color: var(--text-dark);
 }
 
-/* Contenedor principal que ocupa TODA la ventana */
+
 .main-fullscreen-container {
     width: 100%;
     min-height: 100vh;
@@ -33,10 +33,9 @@ body {
     box-sizing: border-box;
 }
 
-/* Contenedor del contenido para limitar el ancho en escritorio */
 .content-wrapper-xl {
     width: 100%;
-    max-width: 950px; /* Ancho optimizado para la vista de tarjetas */
+    max-width: 950px; 
 }
 
 /* Encabezado */
@@ -68,14 +67,12 @@ h1 {
     margin-bottom: 50px;
 }
 
-/* --- Contenedor de Tarjetas --- */
 .cards-container {
     display: flex;
     flex-direction: column;
     gap: 30px; /* Espacio entre tarjetas */
 }
 
-/* Estilo de la Tarjeta Individual (como en la imagen) */
 .resident-card {
     background-color: var(--white);
     border: 1.5px solid var(--border-color);
@@ -93,13 +90,11 @@ h1 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* Sección de Información de la Tarjeta */
 .card-info {
     flex: 1;
     margin-right: 40px;
 }
 
-/* Cabecera con icono de usuario */
 .user-header {
     display: flex;
     align-items: center;
@@ -122,10 +117,9 @@ h1 {
     margin-top: 5px;
 }
 
-/* Cuadrícula de datos (Casa, Fecha) */
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-columns: 1fr 1fr; 
     gap: 30px;
 }
 
@@ -135,10 +129,9 @@ h1 {
     font-weight: 700;
     color: var(--text-muted);
     margin-bottom: 8px;
-    text-transform: uppercase; /* Etiquetas en mayúsculas como en la imagen */
+    text-transform: uppercase; 
 }
 
-/* Tag azul para N° de Residencia */
 .tag {
     display: inline-block;
     padding: 6px 14px;
@@ -158,10 +151,9 @@ h1 {
     color: var(--text-dark);
 }
 
-/* Sección de Botones de Acción */
 .card-actions {
     display: flex;
-    flex-direction: column; /* Botones uno sobre otro */
+    flex-direction: column;
     gap: 12px;
     min-width: 200px;
 }
@@ -177,7 +169,6 @@ h1 {
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
-/* Botón Verde (como "Aprobar Acceso" en la imagen) */
 .btn-primary {
     background-color: var(--success-green);
     color: white;
@@ -187,7 +178,6 @@ h1 {
     background-color: #27ae60;
 }
 
-/* Botón Rojo Suave (como "Rechazar" en la imagen) */
 .btn-secondary {
     background-color: #fceae9;
     color: var(--error-red);
@@ -221,7 +211,7 @@ h1 {
     }
     .card-grid {
     display: grid;
-    /* Cambiamos a 3 columnas de igual tamaño */
+
     grid-template-columns: 1fr 1fr 1fr; 
     gap: 20px;
 }
