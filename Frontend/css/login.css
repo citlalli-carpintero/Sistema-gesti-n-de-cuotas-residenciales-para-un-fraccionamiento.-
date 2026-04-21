@@ -4,15 +4,14 @@
     --text-muted: #606770;
     --border-color: #dddfe2;
     --white: #ffffff;
-    --bg-gray-field: #f8f9fa; /* Gris muy suave para los inputs */
+    --bg-gray-field: #f8f9fa; 
 }
 
-/* Configuramos html y body para ocupar todo el espacio */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--white); /* Fondo blanco total */
+    background-color: var(--white); 
 }
 
 body {
@@ -20,21 +19,20 @@ body {
     color: var(--text-dark);
 }
 
-/* Contenedor principal que ocupa TODA la ventana */
 .main-fullscreen-container {
     width: 100%;
-    min-height: 100vh; /* Alto total de la ventana */
+    min-height: 100vh; 
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    padding: 60px; /* Espaciado generoso en los bordes */
+    justify-content: center; 
+    align-items: center; 
+    padding: 60px;
     box-sizing: border-box;
 }
 
-/* Contenedor del contenido para limitar el ancho en escritorio */
+
 .login-content-wrapper {
     width: 100%;
-    max-width: 500px; /* Ancho optimizado para legibilidad */
+    max-width: 500px; 
     text-align: center;
 }
 
@@ -45,7 +43,6 @@ h1 {
     font-weight: 700;
 }
 
-/* Selector de Pestañas (Residente/Admin) */
 .user-selector {
     display: flex;
     background-color: #f1f3f5;
