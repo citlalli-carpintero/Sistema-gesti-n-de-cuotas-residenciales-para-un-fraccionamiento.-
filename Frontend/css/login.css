@@ -1,0 +1,146 @@
+:root {
+    --primary-blue: #4353ff;
+    --text-dark: #1c1e21;
+    --text-muted: #606770;
+    --border-color: #dddfe2;
+    --white: #ffffff;
+    --bg-gray-field: #f8f9fa; /* Gris muy suave para los inputs */
+}
+
+/* Configuramos html y body para ocupar todo el espacio */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white); /* Fondo blanco total */
+}
+
+body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+}
+
+/* Contenedor principal que ocupa TODA la ventana */
+.main-fullscreen-container {
+    width: 100%;
+    min-height: 100vh; /* Alto total de la ventana */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 60px; /* Espaciado generoso en los bordes */
+    box-sizing: border-box;
+}
+
+/* Contenedor del contenido para limitar el ancho en escritorio */
+.login-content-wrapper {
+    width: 100%;
+    max-width: 500px; /* Ancho optimizado para legibilidad */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Selector de Pestañas (Residente/Admin) */
+.user-selector {
+    display: flex;
+    background-color: #f1f3f5;
+    border-radius: 12px;
+    padding: 6px;
+    margin-bottom: 35px;
+}
+
+.selector-btn {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+    background: transparent;
+}
+
+.selector-btn.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* Formulario */
+.form-group {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    background-color: var(--bg-gray-field); /* Fondo gris suave para resaltar los campos */
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-blue);
+    background-color: var(--white); /* Vuelve a blanco al tener foco */
+    box-shadow: 0 0 0 4px rgba(67, 83, 255, 0.1);
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+.forgot-password a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Botón Ingresar */
+.btn-ingresar {
+    width: 100%;
+    max-width: 300px; /* El botón no necesita ocupar todo el ancho del formulario */
+    display: block;
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.btn-ingresar:hover {
+    background-color: #3544d6;
+}
+
+.btn-ingresar:active {
+    transform: scale(0.98);
+}
